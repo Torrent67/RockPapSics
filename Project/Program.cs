@@ -11,8 +11,12 @@ namespace GameLog
             Console.WriteLine("Enter Rock, Paper, or Scissors");
             string userChoice = Console.ReadLine();
             if(userChoice == "Rock" || userChoice == "Paper" || userChoice == "Scissors")
-            lol.OutCome();
-            Console.WriteLine("Results " + lol.OutCome());
+            {   string outcome = lol.OutCome(userChoice);
+                 Console.WriteLine("Results " + outcome);
+            }
+            // Console.WriteLine(lol.OutCome());
+           
+          
         
 
         }

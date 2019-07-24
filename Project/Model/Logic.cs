@@ -7,15 +7,19 @@ namespace GameLog
     {
         public string UserChoice;
         public string RandChoice;
-        public int number;
+        public int Number;
         string[] choices = new string[] {"Rock", "Paper", "Scissors"};
 
-        public string OutCome()
+        public string OutCome(string userChoice)
         {
-            Random computer = new Random();
-            number = computer.Next(0, 3);
-            RandChoice = choices[number];
+            UserChoice = userChoice;
+            
+            
 
+            Random computer = new Random();
+            int number = computer.Next(0, 3);
+            RandChoice = choices[number];
+            Console.WriteLine("The computer chooses " + RandChoice);
             if(UserChoice == "Rock" && RandChoice == "Paper" || UserChoice == "Paper" && RandChoice == "Rock")
             {
                 return "Paper wins";
@@ -30,7 +34,7 @@ namespace GameLog
             }
             else if (UserChoice == "Rock" && RandChoice == "Rock" || UserChoice == "Paper" && RandChoice == "Paper" || UserChoice == "Scissors" && RandChoice == "Scissors")
             {
-                return "Game Tie";
+                return "Tie Game";
             }
             else
             {
